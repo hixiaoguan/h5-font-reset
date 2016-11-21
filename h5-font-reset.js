@@ -4,7 +4,8 @@
         recalc = function () {
             var clientWidth = doc.body.clientWidth;
             if (!clientWidth) return;
-            doc.body.style.fontSize = 20 * (clientWidth / 640) + 'px';
+            var theHtml = doc.getElementsByTagName("html");
+            theHtml[0].style.fontSize = 20 * (clientWidth / 640) + 'px';
         };
     if (!doc.addEventListener) return;
     win.addEventListener(resizeEvt, recalc, false);
